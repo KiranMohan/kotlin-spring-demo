@@ -4,6 +4,7 @@ plugins {
     id("org.springframework.boot") version "2.5.5" apply false
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
     kotlin("jvm")
+    kotlin("plugin.spring") version "1.5.31"
 }
 
 group = "org.ktest.study.kotlin.spring"
