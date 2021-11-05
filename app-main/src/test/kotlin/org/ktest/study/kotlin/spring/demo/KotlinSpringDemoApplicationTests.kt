@@ -12,10 +12,11 @@ import org.springframework.http.HttpStatus
 class KotlinSpringDemoApplicationTests(@Autowired val restTemplate: TestRestTemplate) {
 
     @Test
-    fun `Assert blog page title, content and status code`() {
-        val entity = restTemplate.getForEntity<String>("/")
+    fun `Assert test rest call content and status code`() {
+        println("Assert test rest call content and status code")
+        val entity = restTemplate.getForEntity<String>("/test")
         assertThat(entity.statusCode).isEqualTo(HttpStatus.OK)
-        assertThat(entity.body).contains("<h1>Blog</h1>")
+        assertThat(entity.body).contains("Test call to localhost")
     }
 
 }

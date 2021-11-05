@@ -6,6 +6,7 @@ plugins {
     kotlin("jvm")
     kotlin("plugin.spring") version "1.5.31"
     kotlin("plugin.allopen") version "1.5.31"
+    kotlin("plugin.jpa") version "1.5.31"
 }
 
 group = "org.ktest.study.kotlin.spring"
