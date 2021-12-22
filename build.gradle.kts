@@ -6,3 +6,11 @@ plugins {
 
 group = "org.ktest.study"
 version = "1.0-SNAPSHOT"
+
+allprojects {
+
+    repositories {
+        mavenCentral()
+    }
+
+}

@@ -11,10 +11,6 @@ group = "org.ktest.study.kotlin.spring"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
-repositories {
-    mavenCentral()
-}
-
 dependencies {
     implementation(project(":app-spring-demo-lib"))
     implementation("org.springframework.boot:spring-boot-starter-web")
