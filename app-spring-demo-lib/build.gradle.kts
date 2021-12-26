@@ -1,9 +1,8 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     id("org.springframework.boot") version "2.5.5" apply false
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
-    kotlin("jvm")
+    id("kotlin-spring-demo.kotlin-conventions")
     kotlin("plugin.spring") version "1.5.31"
     kotlin("plugin.allopen") version "1.5.31"
     kotlin("plugin.jpa") version "1.5.31"
@@ -11,7 +10,6 @@ plugins {
 
 group = "org.ktest.study.kotlin.spring"
 version = "1.0-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_11
 
 dependencyManagement {
     imports {
@@ -33,14 +31,8 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
-tasks.withType<KotlinCompile> {
-    kotlinOptions {
-        freeCompilerArgs = listOf("-Xjsr305=strict")
-        jvmTarget = "11"
-    }
-}
-
-tasks.withType<Test> {    useJUnitPlatform()
+tasks.withType<Test> {
+    useJUnitPlatform()
 }
 
 allOpen {
