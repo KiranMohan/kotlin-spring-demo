@@ -1,11 +1,11 @@
 
 plugins {
-    id("org.springframework.boot") version "2.5.5" apply false
-    id("io.spring.dependency-management") version "1.0.11.RELEASE"
+    alias(deps.plugins.springboot) apply false
+    alias(deps.plugins.spring.deps.mgmt)
     id("kotlin-spring-demo.kotlin-conventions")
-    kotlin("plugin.spring") version "1.5.31"
-    kotlin("plugin.allopen") version "1.5.31"
-    kotlin("plugin.jpa") version "1.5.31"
+    alias(deps.plugins.kotlin.spring)
+    alias(deps.plugins.kotlin.allopen)
+    alias(deps.plugins.kotlin.jpa)
 }
 
 group = "org.ktest.study.kotlin.spring"
