@@ -10,6 +10,7 @@ group = "org.ktest.study.kotlin.spring"
 version = "0.0.1-SNAPSHOT"
 
 dependencies {
+    // Add any new dependencies with version using the version catalog in settings.gradle.kts
     implementation(project(":app-spring-demo-lib"))
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")

@@ -18,6 +18,8 @@ dependencyManagement {
 }
 
 dependencies {
+    // Add any new dependencies with version using the version catalog in settings.gradle.kts
+
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.springframework.boot:spring-boot-starter-mustache")
