@@ -1,9 +1,9 @@
-package org.ktest.study.kotlin.spring.blog
+package org.ktest.study.kotlin.spring.blog.controller
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.ktest.study.kotlin.blog.utils.toSlug
-import org.ktest.study.kotlin.spring.blog.controller.BlogConfiguration
+import org.ktest.study.kotlin.spring.blog.configuration.BlogConfiguration
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.boot.test.context.SpringBootTest

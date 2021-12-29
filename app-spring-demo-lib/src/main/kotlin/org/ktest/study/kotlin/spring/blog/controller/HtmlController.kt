@@ -1,4 +1,4 @@
-package org.ktest.study.kotlin.spring.blog
+package org.ktest.study.kotlin.spring.blog.controller
 
 import org.ktest.study.kotlin.blog.utils.format
 import org.ktest.study.kotlin.spring.blog.db.Article

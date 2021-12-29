@@ -2,7 +2,7 @@ package org.ktest.study.kotlin.spring.blog.db
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
-import org.ktest.study.kotlin.spring.blog.controller.BlogConfiguration
+import org.ktest.study.kotlin.spring.blog.configuration.BlogConfiguration
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager
