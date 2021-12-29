@@ -1,3 +1,11 @@
+import java.io.*
+import java.util.*
+
+val gradleProps = Properties()
+FileInputStream(file("gradle.properties")).use {
+    gradleProps.load(it)
+}
+
 rootProject.name = "kotlin-spring-demo"
 
 include("app-spring-demo-lib")
@@ -9,16 +17,13 @@ dependencyResolutionManagement {
     versionCatalogs {
         create("deps") {
 
-            val kotlinVersion = "kotlinVersion"
-            // NOTE: also update the kotlin version in buildSrc/build.gradle.kts
-            // TODO: avoid specifying kotlin version in buildSrc/build.gradle.kts
-            version(kotlinVersion, "1.5.31")
+            val kotlinVersion = gradleProps.getProperty("kotlin.version")
 
-            alias("springboot").toPluginId("org.springframework.boot").version("2.5.5")
-            alias("spring.deps.mgmt").toPluginId("io.spring.dependency-management").version("1.0.11.RELEASE")
-            alias("kotlin.spring").toPluginId("org.jetbrains.kotlin.plugin.spring").versionRef(kotlinVersion)
-            alias("kotlin.allopen").toPluginId("org.jetbrains.kotlin.plugin.allopen").versionRef(kotlinVersion)
-            alias("kotlin.jpa").toPluginId("org.jetbrains.kotlin.plugin.jpa").versionRef(kotlinVersion)
+            alias("springboot").toPluginId("org.springframework.boot").version(gradleProps.getProperty("springboot.version"))
+            alias("spring.deps.mgmt").toPluginId("io.spring.dependency-management").version(gradleProps.getProperty("spring.deps.mgmt.version"))
+            alias("kotlin.spring").toPluginId("org.jetbrains.kotlin.plugin.spring").version(kotlinVersion)
+            alias("kotlin.allopen").toPluginId("org.jetbrains.kotlin.plugin.allopen").version(kotlinVersion)
+            alias("kotlin.jpa").toPluginId("org.jetbrains.kotlin.plugin.jpa").version(kotlinVersion)
         }
     }
 }
