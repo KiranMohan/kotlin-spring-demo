@@ -24,6 +24,7 @@ dependencyResolutionManagement {
             alias("kotlin.spring").toPluginId("org.jetbrains.kotlin.plugin.spring").version(kotlinVersion)
             alias("kotlin.allopen").toPluginId("org.jetbrains.kotlin.plugin.allopen").version(kotlinVersion)
             alias("kotlin.jpa").toPluginId("org.jetbrains.kotlin.plugin.jpa").version(kotlinVersion)
+            alias("springmockk").to("com.ninja-squad:springmockk:3.0.1")
         }
     }
 }

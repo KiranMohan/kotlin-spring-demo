@@ -31,6 +31,13 @@ dependencies {
     runtimeOnly("com.h2database:h2")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.springframework.boot:spring-boot-starter-test") {
+        exclude(module = "junit")
+        exclude(module = "mockito-core")
+    }
+    testImplementation("org.junit.jupiter:junit-jupiter-api")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
+    testImplementation(deps.springmockk)
 }
 
 tasks.withType<Test> {
