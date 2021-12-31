@@ -6,6 +6,7 @@ plugins {
     alias(deps.plugins.kotlin.spring)
     alias(deps.plugins.kotlin.allopen)
     alias(deps.plugins.kotlin.jpa)
+    kotlin("kapt")
 }
 
 group = "org.ktest.study.kotlin.spring"
@@ -38,6 +39,8 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
     testImplementation(deps.springmockk)
+
+    kapt("org.springframework.boot:spring-boot-configuration-processor")
 }
 
 tasks.withType<Test> {

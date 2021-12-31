@@ -4,6 +4,7 @@ import org.ktest.study.kotlin.blog.utils.format
 import org.ktest.study.kotlin.spring.blog.db.Article
 import org.ktest.study.kotlin.spring.blog.db.ArticleRepository
 import org.ktest.study.kotlin.spring.blog.db.User
+import org.ktest.study.kotlin.spring.blog.properties.BlogProperties
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
@@ -13,11 +14,15 @@ import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.server.ResponseStatusException
 
 @Controller
-class HtmlController(private val repository: ArticleRepository) {
+class HtmlController(
+    private val repository: ArticleRepository,
+    private val properties: BlogProperties
+) {
 
     @GetMapping("/")
     fun blog(model: Model): String {
         model["title"] = "Blog"
+        model["banner"] = properties.banner
         model["articles"] = repository.findAllByOrderByAddedAtDesc().map { it.render() }
         return "blog"
     }
